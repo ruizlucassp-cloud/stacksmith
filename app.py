@@ -122,4 +122,8 @@ Be specific. Avoid generic advice. If the user mentions a platform (e.g., Shopif
     return jsonify({"result": result})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
+
+Fix: bind to 0.0.0.0 and use PORT env var for Render
